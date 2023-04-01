@@ -20,7 +20,6 @@ import '../assets/icon.js'
   width: 30px;
   height: 30px;
   overflow: hidden;
-  fill: #42b983;
   vertical-align: -0.15em;
 }
 
