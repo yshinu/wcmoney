@@ -19,7 +19,6 @@
 
 .content {
   overflow: auto;
-  border: 1px solid yellow;
   flex-grow: 1;
 }
 
