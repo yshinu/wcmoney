@@ -1,18 +1,16 @@
 <template>
     <nav>
-
-
-        <router-link to="/labels" class="item">
+        <router-link to="/labels" class="item" active-class="selected">
             <Icon name="标签"></Icon>
             <span>标签</span>
         </router-link>
         |
-        <router-link to="/money" class="item">
+        <router-link to="/money" class="item" active-class="selected">
             <Icon name="理财"></Icon>
             <span>理财</span>
         </router-link>
         |
-        <router-link to="/statistics" class="item">
+        <router-link to="/statistics" class="item" active-class="selected">
             <Icon name="分析"></Icon>
             <span>统计</span>
         </router-link>
@@ -49,10 +47,13 @@ nav{
         text-align: center;
         font-size: 16px;
         text-decoration: none;
+        color: inherit;
+    }
+    > .item.selected{
+        color: #42b983;
     }
     span {
         font-weight: bold;
-        color: black;
     }
 }
 
