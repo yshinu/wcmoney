@@ -1,24 +1,28 @@
 <template>
     <nav>
         <router-link to="/labels" class="item" active-class="selected">
-            <Icon name="标签"></Icon>
+            <Icon name=labels></Icon>
             <span>标签</span>
         </router-link>
         |
         <router-link to="/money" class="item" active-class="selected">
-            <Icon name="理财"></Icon>
+            <Icon name="money"></Icon>
             <span>理财</span>
         </router-link>
         |
         <router-link to="/statistics" class="item" active-class="selected">
-            <Icon name="分析"></Icon>
+            <Icon name="statistics"></Icon>
             <span>统计</span>
         </router-link>
 
     </nav>
 </template>
 
+
+
 <script lang="ts">
+import '../assets/icon.js'
+
 // let importAll = (requireContext: __WebpackModuleApi.RequireContext) => requireContext.keys().forEach(requireContext);
 // try {
 //     importAll(require.context(path : "../assets/icons", deep:true, filter:/\.svg$/))
