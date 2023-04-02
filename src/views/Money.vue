@@ -6,7 +6,7 @@
             <Notes />
 
 
-            <Types />
+            <Types  xxx="nihao"/>
 
 
             <NumberPad />

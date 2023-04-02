@@ -7,7 +7,7 @@
         |
         <router-link to="/money" class="item" active-class="selected">
             <Icon name="money"></Icon>
-            <span>理财</span>
+            <span>记账</span>
         </router-link>
         |
         <router-link to="/statistics" class="item" active-class="selected">
