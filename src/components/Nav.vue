@@ -40,7 +40,7 @@ export default {
 
 nav{
     display: flex;
-    box-shadow: 0 0 7px rgba(0,0,0,0.3);
+    box-shadow: 0 0 3px rgba(0,0,0,0.3);
     padding: 2px 0;
     > .item{
         display: flex;
