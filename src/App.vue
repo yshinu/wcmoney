@@ -12,12 +12,22 @@
   padding: 0;
   box-sizing: border-box;
 }
+ul,ol{
+    list-style: none;
+}
+button,input{
+    font: inherit;
+}
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #333;
   line-height: 1.5;
   font-family: $font-hei;
+  font-size: 16px;
+}
+:focus{
+    outline: none;
 }
 
 </style>
