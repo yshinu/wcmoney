@@ -8,23 +8,22 @@
 
 </template>
 
-<script>
-export default {
-    name: "Types",
-    props:['xxx'],
-    data(){
-        return{
-            type : '-'//'-'表示支出‘+’表示收入
-        }
-    },
-    methods :{
-        selectType(type){
+<script lang="ts">
+import {Component, Prop, Vue} from "vue-property-decorator";
+@Component
+
+
+export default class Types extends Vue{
+    @Prop(Number) xxx: number|undefined
+    type='-'//'-'表示支出‘+’表示收入
+    selectType(type: string){
             if (type !=='-'&&type !== '+'){
                 throw  new Error('type是个未知类型')
             }
             this.type=type
-        }
-    },
+    }
+
+
 }
 </script>
 
