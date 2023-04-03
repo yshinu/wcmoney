@@ -13,10 +13,6 @@ import {Component, Vue} from "vue-property-decorator";
 @Component
 export default class Notes extends Vue {
     value:string=''
-    onInput(event:KeyboardEvent){
-        const input = event.target as HTMLInputElement
-        this.value = input.value
-    }
 }
 </script>
 
