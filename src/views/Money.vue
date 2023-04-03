@@ -26,12 +26,13 @@ import Types from "@/components/Money/Types.vue";
 import Notes from "@/components/Money/Notes.vue";
 import Tags from "@/components/Money/Tags.vue";
 import {Component, Vue, Watch} from "vue-property-decorator";
+
 type Record={
     tags:string[]
     notes:string
     type:string
     amount:number
-    createTime?:Date
+    createTime?:string
 }
 @Component(
     {
@@ -58,7 +59,19 @@ export default class Money extends Vue {
     }
     saveRecord(){
         const record2:Record= JSON.parse(JSON.stringify(this.record))
-        record2.createTime = new Date()
+
+        let date = new Date();
+        let options:Intl.DateTimeFormatOptions = {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: false,
+            timeZone: 'Asia/Shanghai'
+        };
+        record2.createTime = date.toLocaleString('zh-CN', options)
         this.recordList.push(record2)
     }
     @Watch('recordList')
