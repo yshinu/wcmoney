@@ -1,6 +1,6 @@
 <template>
     <layout class-prefix="layout">
-            <tags :data-source="tags"/>
+            <tags :data-source.sync="tags"/>
 
 
             <Notes />
