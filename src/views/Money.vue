@@ -31,7 +31,7 @@ type Record={
     notes:string
     type:string
     amount:number
-
+    createTime?:Date
 }
 @Component(
     {
@@ -41,7 +41,7 @@ type Record={
 export default class Money extends Vue {
     recordList:Record[]=[]
     record:Record={
-        tags:[],notes:'',type:'-',amount:0
+        tags:[],notes:'',type:'-',amount:0,
 }
     addTag(e:string){
         this.tags.push(e)
@@ -57,8 +57,9 @@ export default class Money extends Vue {
         this.record.amount = parseFloat(value)
     }
     saveRecord(){
-        const record=JSON.parse(JSON.stringify(this.record))
-        this.recordList.push(record)
+        const record2:Record= JSON.parse(JSON.stringify(this.record))
+        record2.createTime = new Date()
+        this.recordList.push(record2)
     }
     @Watch('recordList')
     onRecordListChanged(){
