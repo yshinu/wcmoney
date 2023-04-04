@@ -18,6 +18,9 @@ body{
 ul,ol{
     list-style: none;
 }
+a{
+    list-style: none;
+}
 button,input{
     font: inherit;
 }

@@ -1,7 +1,7 @@
 <template>
     <div class="tags">
         <div class="new">
-            <button @click="createTag">新增标签</button>
+            <router-link to="/labels" class="trans">新增标签</router-link>
         </div>
         <ul class="current">
             <li v-for="tag in dataSource" :key="tag"
@@ -32,10 +32,6 @@ export default class Tags extends Vue {
 
 
     }
-    createTag(){
-        this.$router.push('/labels')
-    }
-
 }
 </script>
 
@@ -69,10 +65,9 @@ export default class Tags extends Vue {
   > .new {
     margin: 16px 8px;
 
-    button {
+    .trans {
       border: none;
       background: transparent;
-      border-bottom: 1px solid;
       color: #999;
       padding: 0 3px;
 
