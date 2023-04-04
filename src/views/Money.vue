@@ -5,7 +5,7 @@
 
 
 
-        <Notes @update:value="updateNotes"/>
+        <Notes placeholder="在这里输入备注" field-name="备注" @update:value="updateNotes"/>
 
 
         <Types :value.sync="record.type" />
