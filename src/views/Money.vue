@@ -42,7 +42,7 @@ export default class Money extends Vue {
         tags:[],notes:'',type:'-',amount:0,
 }
     addTag(e:string){
-        this.tags.push(e)
+        tagListModel.create(e)
     }
     updateTags(value: string[]) {
         this.record.tags=value
