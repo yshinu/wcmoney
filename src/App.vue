@@ -12,6 +12,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+body{
+    background: rgba(220,220,220,0.2);
+}
 ul,ol{
     list-style: none;
 }

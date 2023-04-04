@@ -37,7 +37,7 @@ export default class Tags extends Vue {
         if (name===''){
             window.alert('标签名不能为空')
         }
-        else if(name!==''){
+         if(name!==''){
             this.$emit('update:tag',name)
         }
     }
