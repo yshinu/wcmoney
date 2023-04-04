@@ -1,9 +1,9 @@
 <template>
     <layout class-prefix="layout">
         {{recordList}}
-        <tags :data-source="tagList"
-              @update:tag="addTag"
-              @update:value="updateTags"/>
+        <tags :data-source="tagList" @update:value="updateTags"></tags>
+<!--              @update:tag="addTag"-->
+<!--              @update:value="updateTags"/>-->
 
 
         <Notes @update:value="updateNotes"/>
@@ -42,9 +42,9 @@ export default class Money extends Vue {
     record:RecordItem={
         tags:[],notes:'',type:'-',amount:0,
 }
-    addTag(e:string){
-        tagListModel.create(e)
-    }
+    // addTag(e:string){
+    //     tagListModel.create(e)
+    // }
     updateTags(value: string[]) {
         this.record.tags=value
     }
