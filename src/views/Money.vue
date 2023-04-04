@@ -1,6 +1,6 @@
 <template>
     <layout class-prefix="layout">
-        {{record}}
+        {{recordList}}
         <tags :data-source="tags"
               @update:tag="addTag"
               @update:value="updateTags"/>
@@ -26,22 +26,17 @@ import Types from "@/components/Money/Types.vue";
 import Notes from "@/components/Money/Notes.vue";
 import Tags from "@/components/Money/Tags.vue";
 import {Component, Vue, Watch} from "vue-property-decorator";
+import model from "@/model";
 
-type Record={
-    tags:string[]
-    notes:string
-    type:string
-    amount:number
-    createTime?:string
-}
 @Component(
     {
         components: {Tags, Notes, Types, NumberPad}
     }
 )
 export default class Money extends Vue {
-    recordList:Record[]=[]
-    record:Record={
+    recordList = model.fetch()
+
+    record:RecordItem={
         tags:[],notes:'',type:'-',amount:0,
 }
     addTag(e:string){
@@ -56,9 +51,11 @@ export default class Money extends Vue {
     }
     updateAmount(value:string){
         this.record.amount = parseFloat(value)
+
     }
     saveRecord(){
-        const record2:Record= JSON.parse(JSON.stringify(this.record))
+        const record2:RecordItem= JSON.parse(JSON.stringify(this.record))
+        console.log(record2)
 
         let date = new Date();
         let options:Intl.DateTimeFormatOptions = {
@@ -76,7 +73,7 @@ export default class Money extends Vue {
     }
     @Watch('recordList')
     onRecordListChanged(){
-        window.localStorage.setItem('recordList',JSON.stringify(this.recordList))
+        model.save(this.recordList)
     }
 
 
