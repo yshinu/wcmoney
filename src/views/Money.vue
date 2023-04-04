@@ -1,7 +1,7 @@
 <template>
     <layout class-prefix="layout">
         {{recordList}}
-        <tags :data-source="tags"
+        <tags :data-source="tagList"
               @update:tag="addTag"
               @update:value="updateTags"/>
 
@@ -36,7 +36,8 @@ import tagListModel from "@/models/tagListModel";
 )
 export default class Money extends Vue {
     recordList = recordListModel.fetch()
-    tagList = tagListModel.fetch()
+    tagList = tagListModel.fetch().map(i=>i.name)
+
 
     record:RecordItem={
         tags:[],notes:'',type:'-',amount:0,
@@ -77,13 +78,6 @@ export default class Money extends Vue {
     onRecordListChanged(){
         recordListModel.save(this.recordList)
     }
-
-
-
-
-
-    tags: string[] = this.tagList
-
 }
 </script>
 
